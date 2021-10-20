@@ -1,0 +1,98 @@
+Kitty! to Screen to tmux cheatsheet
+alias k='/Applications/kitty.app/Contents/MacOS/kitty'
+
+
++-- Kitty args (basic)
+| -T title_here 
+| -c kitty-jc.conf
+| -d ~/somedir 
+|  --start-as  (normal, fullscreen, minimized, maximized)
+| --wait-for-single-
+| -1  One Instance* (see quirks below). Also --hold, --instance-group, --wait-for-single-
+-----
+| --session : Load a pre-defined window layout
+| --watcher : Advanced! check back later
+| 
+
+---Debugging (interactive)
+  --dump-commands
+
++-- Kitty quirks
+The actualy kitty elf executable will not exit() as expected 
+i.e. if you laucch K inside terminal.app, and subsequently quit kitty
+(Cmd-Q, click close, ...) your original terminal will still have a job in the foreground.
+This has something to do with kitty sessions (?). Sort of like tmux. Sort of like iTermServer
+---
+by default(?) the kitty.conf file attempts to load color configuration from './colors.conf'
+(does this end up ..compositing(?) well when using 'direnv' ?
+
+A theme in kitty is just a :file:`.conf` file containing kitty settings.
+
+
+You can easily create your own kittens to extend kitty. They are just
+terminal programs written in Python.
+
+kitty| has the ability to easily *Edit*, *Open* or *Download* files
+from a computer into which you are SSHed.
+
++- kitty.conf | tmux.conf ----
+|  K -c kitty.conf, tmux -f tmux.conf
+
+
+https://github.com/jason0x43/dotfiles/blob/master/config/kitty/kitty.conf
+
+
++-kitty initialization--------------------------+
+| Create session: K
+| List   session: tmux list-sessions  | tmux ls|
++----------------------------------------------+
++-tmux initialization--------------------------+
+| Create session: tmux new-session -s SessName |
+| List   session: tmux list-sessions  | tmux ls|
+| Join   session: tmux attach-session | tmux a |
+| Detach session: C-d                 |        |
++----------------------------------------------+
+
+---------------------------------------------
+|Command         |screen|tmux               |
+-----------tabs-----------------------------+
+|Esc             |C-a   |C-q                |
+|(C)reate tab    |C-c   |C-c                |
+|n(A)me tab      |C-A   |C-A                |
+|(N)ext tab      |C-n   |C-n, C-right, C-tab|
+|(P)rev tab      |C-p   |C-p, C-left        |
+|Switch to tab id|      |C-1, C-2, ..       |
+|Kill tab        |C-x   |C-x  (close)       |
+|(D)etach        |C-d   |C-d                |
++---------windows**-------------------------|
+|Split win horz  |C-S   |C--                |
+|Split win vert  |      |C-|                |
+|show win ID #   |      |C-#                |
+|Navigate win    |      |C-up, C-down, C-tab|
+|Jump to win ID #|      |C-j, #             |
+|(L)ast tab      |      |C-l                |
+|Toggl Mous suprt|      |C-M, C-m           |
+|----------------+------+-------------------|
+|V. Grow   win   |      |C-> (think ‘bigger)|
+|V. Shrink win   |      |C-< (think ’smaller|
+|H. Grow   win   |      |C-\ slash points   |
+|H. Shrink  win  |      |C-/ toward  directn|
+|—---------Advanced win mgmt—---------------|
+|Zoom/Unzoom |   |      |C-z (think maximize|
+|Break window out|      |C-! (turn win->tab)|
+|Find Window     |      |C-f, name-to-find  |        
+|(re)-Layout wins|      |C-space            |
+|----------------+------+-------------------|
+
++-Session mgmt (advanced)----------------------+
+| Switch session: C-s                 |        |
+| Rename session: C-S                 |        |
+| Create session  C-:new (inside tmux)|        |
++----------------------------------------------+
+
+
+** these are called panes in tmux jargon
+*** you can see a list of all key bindings at any time with C-?.
+
+Last modified 2015-03-26
+
