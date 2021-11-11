@@ -1,0 +1,25 @@
+
+TEXTMODE2:
+Man this guy seems like a good start
+* https://www.sitepen.com/blog/an-even-more-modern-terminal-based-development-environment?utm_source=pocket_mylist
+* https://github.com/jason0x43/dotfiles
+
+##VTE
+
+
+## Environment management
+
+### direnv
+ * https://direnv.net/
+ * Convenient (and cross-shell, cross-os) way to consistently update ENV. Context dependent development.
+ 
+https://direnv.net/
+
+
+
+##Terminal multiplexing
+
+Tmux is bad? The Kitty developer makes a pretty good use-case
+ 1) tmux consumes STDOUT when it’s buffers get full
+ 2) tmux has to catch-modify and re-transmit all the VTE trickery. 
+    Aside from the nested complexity, it means that all VT escape codes get processed at-least twice (double the energy)
