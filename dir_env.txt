@@ -8,7 +8,11 @@ Johnnys tentative new .env
 # tmux-popups : 
 # tmux show messages: (debugging) https://waylonwalker.com/tmux-show-messages/
 # vscode-tmux : Keyboard Driven VSCode. This guy has my problems: https://waylonwalker.com/keyboard-driven-vscode/
+# gitui :	That guy really likes it, and he seems a lot like me https://waylonwalker.com/gitui.slides/
 
+
+## gitui
+Holy shit. This is so much better than git cli
 2019-7-7
 
 ## Direnv
