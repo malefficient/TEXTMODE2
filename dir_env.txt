@@ -1,0 +1,30 @@
+Johnnys tentative new .env
+
+
+## Potential new things
+* Starship: Cross-shell prompts. Written in rust!  https://starship.rs/
+* direnv:   Might make the sort of nesting PATHS env var stuff easier
+* tmux:     Not new, but would be nice to get a smaller .tmuxrc changeset
+# tmux-popups : 
+# tmux show messages: (debugging) https://waylonwalker.com/tmux-show-messages/
+# vscode-tmux : Keyboard Driven VSCode. This guy has my problems: https://waylonwalker.com/keyboard-driven-vscode/
+
+2019-7-7
+
+## Direnv
+Not really sure yet.
+Step 1) Install 'direnv', and hook it into your .bash,.zsh rc
+
+## TODO(s) 
+It would be nice if there was a way for direnv install | direnv integration failure to alert somehow in tmux status profile
+
+
+See 
+``` brew install direnv ```
+
+
+
+### file mods
+
+alias D='direnv'
+
