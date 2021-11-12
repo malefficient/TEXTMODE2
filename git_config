@@ -1,0 +1,12 @@
+[user]
+	email = johnycsh@gmail.com
+	name = Johnny Cache
+[push]
+	#This gem will push -reachable- -annotated- tags to the upstream repo by default
+	#Including it is a great way to not bash your head in, both at te fact that this
+	#behavior hasn't become some sort of sane default. It also avoids the cognitive
+	#disonnance of rationalizing away the absurd situation that despite typing the 
+	#command 'git commit xxx <tag-name-here> zzz', you haven't/arent trying to commit
+	# a tag. 🙄 
+	#
+	followTags = true
