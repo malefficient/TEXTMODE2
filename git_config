@@ -13,6 +13,7 @@
     # Therefore, despite whatever diligence you may be using to restrict acccess / authentication via ssh keys
     # (Which, is easily done in an industry standard manner (man ssh-agent), eventually you will be confronted with the ineffable
     # 'Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.' error
+    # FYI: A PAT looks something like this: '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'
 
     # The 'solution' to this is to request/generate a PAK, (think OAuth key), store it somewhere 
     # Store it somewhere (if you're reding this, probs the OSX keychain) 
