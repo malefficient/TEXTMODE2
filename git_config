@@ -1,6 +1,25 @@
 [user]
 	email = johnycsh@gmail.com
 	name = Johnny Cache
+[init]
+	defaultBranch = trunk
+[credential]
+	helper = osxkeychain
+    #If this is missing and you are using ssh keys anyway (like anyone post 2015)
+    #You likely wouldn't notice an issue until, say, trying to clone a gist repo by hash (success!)
+    #And then trying to push changes (fail!)
+    #The only way to authenticate changes to gists** is a Personal Access Token (PAT)
+    
+    # Therefore, despite whatever diligence you may be using to restrict acccess / authentication via ssh keys
+    # (Which, is easily done in an industry standard manner (man ssh-agent), eventually you will be confronted with the ineffable
+    # 'Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.' error
+
+    # The 'solution' to this is to request/generate a PAK, (think OAuth key), store it somewhere 
+    # Store it somewhere (if you're reding this, probs the OSX keychain) 
+    # and then hold your breath / ponder how it is that all the applications across all of the machines and all of the
+    # OS's and environment you work in will suddenly synchronize this new shared-secret, which btw, you will really want
+    # to set to expire after some amount of time, requiring you to then answer this question *again* every 30-90 days 
+   
 [push]
 	#This gem will push -reachable- -annotated- tags to the upstream repo by default
 	#Including it is a great way to not bash your head in, both at te fact that this
