@@ -20,6 +20,33 @@
     # and then hold your breath / ponder how it is that all the applications across all of the machines and all of the
     # OS's and environment you work in will suddenly synchronize this new shared-secret, which btw, you will really want
     # to set to expire after some amount of time, requiring you to then answer this question *again* every 30-90 days 
+    
+    # Now that you have created this token utilizing a browser and copied it to your ephemeral cut/paste buffer lest it be lost forever
+    # How/where do you 'save' it? You would think the answer might be "Import it into the osx keychain!" (You know, like a cert)
+    # And while you probably *can* do it that way, this isnt what is expected / documented as the correct approach.
+
+    # Instead, you are supposed to go clone one of your repos (easy enough!), provide the token as authentication, and then presto!
+    # But if you haven't been living in a hole under a rock for the last 5 years, you could *already* clone your own repo's without
+    # even being challenged to authenticate (see: ssh keys). 
+
+   # So now you have this token that you need to utilize for 'out-of-band' communications with github (i.e. not repo information that 
+   # would otherwise be handled by the git protocol itself).  You have been promised that your osx keychain will store and then deliver
+   # this token as need, just as soon as you figure out how to save it. Buy you've never actually been prompted for one of these tokens    # by anything. So how do even get to a point where a tool will prompt you to input it? 
+   # Great question! The simplest answer seems to be:
+
+   # Create a 'gist' (a concept not inherent to the git protocol, and therefore dependent on this comms side-channel to github).
+   # clone it by the hash: git clone https://gist.github.com/malefficient/40e8dd37edddd92168b9a8ca6391a37d
+   # Add a new file to the repo: git add screenshot_001.png; git commit -m ".";
+   # Push the changes: git push
+   # Type your username in (by hand, interactively), 
+   # Type in your github.com password, because that it literally what it is asking you to do. 
+   # Rinse. Repeat. Question if you even have you username or password correct, then finally realize in lieu of a password you should 
+   # cut/pate that awkward string (starting with 'ghp_') 
+   # Success ?
+   
+
+  
+   
    
 [push]
 	#This gem will push -reachable- -annotated- tags to the upstream repo by default
