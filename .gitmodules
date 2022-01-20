@@ -1,0 +1,3 @@
+[submodule "gitui"]
+	path = gitui
+	url = https://github.com/extrawurst/gitui
